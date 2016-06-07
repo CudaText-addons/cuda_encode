@@ -10,6 +10,13 @@ from .escape_table import *
 quote_plus = urllib.parse.quote_plus
 unquote_plus = urllib.parse.unquote_plus
 
+try:
+    unichr(32)
+except NameError:
+    def unichr(val):
+        return chr(val)
+
+
 class StringEncode():
     pass
 
