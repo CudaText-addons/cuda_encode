@@ -9,16 +9,17 @@ format_proc.MSG = '[Encode] '
 
 
 def do(text, class_name):
+    msg = class_name.__name__
+    suffix = 'Command'
+    if msg.endswith(suffix):
+        msg = msg[:-len(suffix)]
+    format_proc.MSG = '[Encode %s] ' % msg
+    
     c = class_name()
     text = c.encode(text)
     del c
     return text
 
 
-def do_html_entitize(text):
-    return do(text, HtmlEntitizeCommand)
-
-
 class Command:
-    def html_entitize(self):
-        format_proc.run(do_html_entitize)
+    def html_entitize(self): format_proc.run( lambda text: do(text, HtmlEntitizeCommand) )
