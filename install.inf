@@ -1,0 +1,99 @@
+[info]
+title=Encode
+desc=Allows to encode text using many transformations (Base64, URL escape, HTML/XML escape, Hash, etc)
+type=cudatext-plugin
+subdir=cuda_encode
+homepage=
+
+[item1]
+section=commands
+caption=Encode\HTML Entitize
+method=html_entitize
+[item2]
+section=commands
+caption=Encode\HTML Deentitize
+method=html_deentitize
+[item11]
+section=commands
+caption=Encode\CSS Escape
+method=css_escape
+[item12]
+section=commands
+caption=Encode\CSS Unescape
+method=css_unescape
+[item21]
+section=commands
+caption=Encode\XML Entitize
+method=xml_entitize
+[item22]
+section=commands
+caption=Encode\XML Deentitize
+method=xml_deentitize
+[item31]
+section=commands
+caption=Encode\Safe HTML Entitize
+method=safe_html_entitize
+[item32]
+section=commands
+caption=Encode\Safe HTML Deentitize
+method=safe_html_deentitize
+[item41]
+section=commands
+caption=Encode\JSON Escape
+method=json_escape
+[item42]
+section=commands
+caption=Encode\JSON Unescape
+method=json_unescape
+[item51]
+section=commands
+caption=Encode\URL Encode
+method=url_encode
+[item52]
+section=commands
+caption=Encode\URL Decode
+method=url_decode
+[item60]
+section=commands
+caption=Encode\MD5
+method=md5_encode
+[item61]
+section=commands
+caption=Encode\SHA256
+method=sha256_encode
+[item62]
+section=commands
+caption=Encode\SHA512
+method=sha512_encode
+[item70]
+section=commands
+caption=Encode\Base64 Encode
+method=base64_encode
+[item71]
+section=commands
+caption=Encode\Base64 Decode
+method=base64_decode
+[item80]
+section=commands
+caption=Encode\Escape regex
+method=escape_regex
+[item81]
+section=commands
+caption=Encode\Escape LIKE
+method=escape_like
+[item90]
+section=commands
+caption=Encode\Decimal to Hexadecimal
+method=dec_hex
+[item91]
+section=commands
+caption=Encode\Hexadecimal to Decimal
+method=hex_dec
+[item92]
+section=commands
+caption=Encode\Unicode to Hexadecimal
+method=unicode_hex
+[item93]
+section=commands
+caption=Encode\Hexadecimal to Unicode
+method=hex_unicode
