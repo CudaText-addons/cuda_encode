@@ -148,7 +148,7 @@ class JsonUnescapeCommand(StringEncode):
 class UrlEncodeCommand(StringEncode):
 
     def encode(self, text, old_school=True):
-        quoted = quote_plus(text)
+        quoted = quote_plus(text, safe='/():;.,[]@&-')
         if old_school:
             return quoted.replace("+", "%20")
         return quoted
