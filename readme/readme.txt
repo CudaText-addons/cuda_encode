@@ -1,48 +1,36 @@
 Plugin for CudaText.
-Allows to convert text (selected block or entire text if nothing selected)
-using many codings (transformations).
-Ported from StringEncode: 
-https://github.com/colinta/SublimeStringEncode
+Allows to convert text (selected block or entire text if nothing selected) using many codings (transformations).
+Ported from StringEncode: https://github.com/colinta/SublimeStringEncode
+Later more codings were added.
 
+Codings:
 
-Codings of original plugin
-(copy/paste from readme)
+- HTML entitize: Converts characters to their HTML entity "&nnn;"
+- HTML deentitize: Converts HTML entities to characters
+- XML entitize: Converts characters to their XML entity
+- XML deentitize: Converts XML entities to characters
+- Safe HTML entitize: Converts characters to their HTML entity, but preserves HTML reserved characters
+- Safe HTML deentitize: Converts HTML entities to characters, but preserves HTML reserved characters
 
-- html_entitize: Converts characters to their HTML entity
+- JSON escape: Escapes a string and surrounds it in quotes, according to the JSON encoding
+- JSON unescape: Unescapes a string (including the quotes!) according to JSON encoding
+- URL encode: Uses urllib.quote to escape special URL characters
+- URL decode: Uses urllib.unquote to convert escaped URL characters
 
-- html_deentitize: Converts HTML entities to a character
+- Base64 encode
+- Base64 decode
+- Base32 encode
+- Base32 decode
+- Base16 encode
+- Base16 decode
 
-- url_encode: Uses urllib.quote to escape special URL characters.
-  Accepts an old_school argument (default: True).  Setting it to False
-  will return %20 instead of + when encoding spaces.
+- MD5: Uses sha package to create md5 hash
+- SHA256: Uses sha package to create sha256 hash
+- SHA512: Uses sha package to create sha512 hash
 
-- url_decode: Uses urllib.unquote to convert escaped URL characters
-
-- json_escape: Escapes a string and surrounds it in quotes, according to the JSON encoding.
-
-- json_unescape: Unescapes a string (include the quotes!) according to JSON encoding.
-
-- base64_encode: Uses base64 to encode into base64
-
-- base64_decode: Uses base64 to decode from base64
-
-- md5_encode: Uses sha package to create md5 hash
-
-- sha256_encode: Uses sha package to create sha256 hash
-
-- sha512_encode: Uses sha package to create sha512 hash
-
-- escape_regex: Escapes regex meta characters
-
-- escape_like: Escapes SQL-LIKE meta characters
-
-- safe_html_entitize: Converts characters to their HTML entity, but preserves HTML reserved characters
-
-- safe_html_deentitize: Converts HTML entities to a character, but preserves HTML reserved characters
-
-- xml_entitize: Converts characters to their XML entity
-
-- xml_deentitize: Converts XML entities to a character
+- Escape regex: Escapes reg. ex. meta characters
+- Escape LIKE: Escapes SQL-LIKE meta characters
 
 
 Author: Alexey T (CudaText)
+License: MIT
