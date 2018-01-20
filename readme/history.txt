@@ -1,6 +1,7 @@
 
 2018.01.21
 + add: codings "Unicode Normalize": NFC, NFD, etc
+* removed commands "Unicode to Hex", "Hex to Unicode"-- seems it does the same as "Unicode-escape Encode/Decode"
 
 2018.01.20
 + add: codings Base32, Base16

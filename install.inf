@@ -129,14 +129,16 @@ method=dec_hex
 section=commands
 caption=Encode\Hex\Hexadecimal to Decimal
 method=hex_dec
-[item92]
-section=commands
-caption=Encode\Hex\Unicode to Hexadecimal
-method=unicode_hex
-[item93]
-section=commands
-caption=Encode\Hex\Hexadecimal to Unicode
-method=hex_unicode
+
+;;Seems, it's the same as Unicode-escape encode/decode
+;[item92]
+;section=commands
+;caption=Encode\Hex\Unicode to Hexadecimal
+;method=unicode_hex
+;[item93]
+;section=commands
+;caption=Encode\Hex\Hexadecimal to Unicode
+;method=hex_unicode
 
 [item120]
 section=commands

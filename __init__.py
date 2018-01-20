@@ -60,8 +60,8 @@ class Command:
 
     def dec_hex(self)             : format_proc.run( lambda text: do(text, DecHexCommand) )
     def hex_dec(self)             : format_proc.run( lambda text: do(text, HexDecCommand) )
-    def unicode_hex(self)         : format_proc.run( lambda text: do(text, UnicodeHexCommand) )
-    def hex_unicode(self)         : format_proc.run( lambda text: do(text, HexUnicodeCommand) )
+    #def unicode_hex(self)         : format_proc.run( lambda text: do(text, UnicodeHexCommand) )
+    #def hex_unicode(self)         : format_proc.run( lambda text: do(text, HexUnicodeCommand) )
 
     def uni_norm_nfc(self)        : format_proc.run( lambda text: normalize('NFC', text) )
     def uni_norm_nfd(self)        : format_proc.run( lambda text: normalize('NFD', text) )
