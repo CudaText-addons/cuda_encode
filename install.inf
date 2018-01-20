@@ -56,42 +56,29 @@ section=commands
 caption=Encode\URL Decode
 method=url_decode
 
-[item60]
-section=commands
-caption=Encode\Hash\MD5
-method=md5_encode
-[item61]
-section=commands
-caption=Encode\Hash\SHA256
-method=sha256_encode
-[item62]
-section=commands
-caption=Encode\Hash\SHA512
-method=sha512_encode
-
 [item70]
 section=commands
-caption=Encode\Base64 Encode
+caption=Encode\Base\Base64 Encode
 method=base64_encode
 [item71]
 section=commands
-caption=Encode\Base64 Decode
+caption=Encode\Base\Base64 Decode
 method=base64_decode
 [item72]
 section=commands
-caption=Encode\Base32 Encode
+caption=Encode\Base\Base32 Encode
 method=base32_encode
 [item73]
 section=commands
-caption=Encode\Base32 Decode
+caption=Encode\Base\Base32 Decode
 method=base32_decode
 [item74]
 section=commands
-caption=Encode\Base16 Encode
+caption=Encode\Base\Base16 Encode
 method=base16_encode
 [item75]
 section=commands
-caption=Encode\Base16 Decode
+caption=Encode\Base\Base16 Decode
 method=base16_decode
 
 [item76]
@@ -114,20 +101,20 @@ method=uniescape_decode
 
 [item86]
 section=commands
-caption=Encode\Escape regex
+caption=Encode\Misc\Escape regex
 method=escape_regex
 [item87]
 section=commands
-caption=Encode\Escape LIKE
+caption=Encode\Misc\Escape %_
 method=escape_like
 
 [item90]
 section=commands
-caption=Encode\Hex\Decimal to Hexadecimal
+caption=Encode\Misc\Decimal to Hexadecimal
 method=dec_hex
 [item91]
 section=commands
-caption=Encode\Hex\Hexadecimal to Decimal
+caption=Encode\Misc\Hexadecimal to Decimal
 method=hex_dec
 
 ;;Seems, it's the same as Unicode-escape encode/decode
@@ -139,6 +126,19 @@ method=hex_dec
 ;section=commands
 ;caption=Encode\Hex\Hexadecimal to Unicode
 ;method=hex_unicode
+
+[item110]
+section=commands
+caption=Encode\Hash\MD5
+method=md5_encode
+[item111]
+section=commands
+caption=Encode\Hash\SHA256
+method=sha256_encode
+[item112]
+section=commands
+caption=Encode\Hash\SHA512
+method=sha512_encode
 
 [item120]
 section=commands
