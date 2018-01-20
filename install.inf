@@ -3,7 +3,7 @@ title=Encode
 desc=Allows to encode text using many transformations (Base64, URL escape, HTML/XML escape, Hash, etc)
 type=cudatext-plugin
 subdir=cuda_encode
-homepage=
+homepage=https://github.com/cudatext-addons/cuda_encode
 
 [item1]
 section=commands
@@ -58,15 +58,15 @@ method=url_decode
 
 [item60]
 section=commands
-caption=Encode\MD5
+caption=Encode\Hash\MD5
 method=md5_encode
 [item61]
 section=commands
-caption=Encode\SHA256
+caption=Encode\Hash\SHA256
 method=sha256_encode
 [item62]
 section=commands
-caption=Encode\SHA512
+caption=Encode\Hash\SHA512
 method=sha512_encode
 
 [item70]
@@ -123,17 +123,17 @@ method=escape_like
 
 [item90]
 section=commands
-caption=Encode\Decimal to Hexadecimal
+caption=Encode\Hex\Decimal to Hexadecimal
 method=dec_hex
 [item91]
 section=commands
-caption=Encode\Hexadecimal to Decimal
+caption=Encode\Hex\Hexadecimal to Decimal
 method=hex_dec
 [item92]
 section=commands
-caption=Encode\Unicode to Hexadecimal
+caption=Encode\Hex\Unicode to Hexadecimal
 method=unicode_hex
 [item93]
 section=commands
-caption=Encode\Hexadecimal to Unicode
+caption=Encode\Hex\Hexadecimal to Unicode
 method=hex_unicode
