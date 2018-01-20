@@ -7,10 +7,10 @@ import json
 import hashlib
 import urllib.parse
 from .escape_table import *
-from .uni_escape import *
 
 quote_plus = urllib.parse.quote_plus
 unquote_plus = urllib.parse.unquote_plus
+ENC = 'utf8' 
 
 try:
     unichr(32)
@@ -18,7 +18,6 @@ except NameError:
     def unichr(val):
         return chr(val)
 
-ENC = 'utf8' 
 
 class StringEncode():
     pass
@@ -211,12 +210,13 @@ class QuoPriDecodeCommand(StringEncode):
 class UnicodeEscapeEncodeCommand(StringEncode):
 
     def encode(self, text):
-        return uni_encode(bytes(text, ENC)).decode(ENC)
+        return bytes(text, 'unicode-escape').decode(ENC)
 
 class UnicodeEscapeDecodeCommand(StringEncode):
 
     def encode(self, text):
-        return uni_decode(bytes(text, ENC)).decode(ENC)
+        return bytes(text, ENC).decode('unicode-escape')
+        
 
 
 class Md5EncodeCommand(StringEncode):
