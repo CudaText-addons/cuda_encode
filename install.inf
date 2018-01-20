@@ -37,6 +37,7 @@ method=safe_html_entitize
 section=commands
 caption=Encode\Safe HTML Deentitize
 method=safe_html_deentitize
+
 [item41]
 section=commands
 caption=Encode\JSON Escape
@@ -45,6 +46,7 @@ method=json_escape
 section=commands
 caption=Encode\JSON Unescape
 method=json_unescape
+
 [item51]
 section=commands
 caption=Encode\URL Encode
@@ -53,6 +55,7 @@ method=url_encode
 section=commands
 caption=Encode\URL Decode
 method=url_decode
+
 [item60]
 section=commands
 caption=Encode\MD5
@@ -65,6 +68,7 @@ method=sha256_encode
 section=commands
 caption=Encode\SHA512
 method=sha512_encode
+
 [item70]
 section=commands
 caption=Encode\Base64 Encode
@@ -73,6 +77,23 @@ method=base64_encode
 section=commands
 caption=Encode\Base64 Decode
 method=base64_decode
+[item72]
+section=commands
+caption=Encode\Base32 Encode
+method=base32_encode
+[item73]
+section=commands
+caption=Encode\Base32 Decode
+method=base32_decode
+[item74]
+section=commands
+caption=Encode\Base16 Encode
+method=base16_encode
+[item75]
+section=commands
+caption=Encode\Base16 Decode
+method=base16_decode
+
 [item80]
 section=commands
 caption=Encode\Escape regex
@@ -81,6 +102,7 @@ method=escape_regex
 section=commands
 caption=Encode\Escape LIKE
 method=escape_like
+
 [item90]
 section=commands
 caption=Encode\Decimal to Hexadecimal

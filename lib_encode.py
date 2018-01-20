@@ -1,9 +1,10 @@
 # coding: utf8
+import sys
 import base64
+import quopri
 import re
 import json
 import hashlib
-import sys
 import urllib.parse
 from .escape_table import *
 
@@ -170,6 +171,38 @@ class Base64DecodeCommand(StringEncode):
 
     def encode(self, text):
         return base64.b64decode(text).decode('raw_unicode_escape')
+
+class Base32EncodeCommand(StringEncode):
+
+    def encode(self, text):
+        return base64.b32encode(text.encode('raw_unicode_escape')).decode('ascii')
+
+class Base32DecodeCommand(StringEncode):
+
+    def encode(self, text):
+        return base64.b32decode(text).decode('raw_unicode_escape')
+
+
+class Base16EncodeCommand(StringEncode):
+
+    def encode(self, text):
+        return base64.b16encode(text.encode('raw_unicode_escape')).decode('ascii')
+
+class Base16DecodeCommand(StringEncode):
+
+    def encode(self, text):
+        return base64.b16decode(text).decode('raw_unicode_escape')
+
+
+class QuoPriEncodeCommand(StringEncode):
+
+    def encode(self, text):
+        return quopri.encodestring(text.encode('raw_unicode_escape')).decode('ascii')
+
+class QuoPriDecodeCommand(StringEncode):
+
+    def encode(self, text):
+        return quopri.decodestring(text).decode('raw_unicode_escape')
 
 
 class Md5EncodeCommand(StringEncode):
