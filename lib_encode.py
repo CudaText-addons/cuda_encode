@@ -17,6 +17,7 @@ except NameError:
     def unichr(val):
         return chr(val)
 
+ENC = 'utf8' 
 
 class StringEncode():
     pass
@@ -164,45 +165,46 @@ class UrlDecodeCommand(StringEncode):
 class Base64EncodeCommand(StringEncode):
 
     def encode(self, text):
-        return base64.b64encode(text.encode('raw_unicode_escape')).decode('ascii')
+        return base64.b64encode(bytes(text, ENC)).decode(ENC)
 
 
 class Base64DecodeCommand(StringEncode):
 
     def encode(self, text):
-        return base64.b64decode(text).decode('raw_unicode_escape')
+        return base64.b64decode(bytes(text, ENC)).decode(ENC)
+        
 
 class Base32EncodeCommand(StringEncode):
 
     def encode(self, text):
-        return base64.b32encode(text.encode('raw_unicode_escape')).decode('ascii')
+        return base64.b32encode(bytes(text, ENC)).decode(ENC)
 
 class Base32DecodeCommand(StringEncode):
 
     def encode(self, text):
-        return base64.b32decode(text).decode('raw_unicode_escape')
+        return base64.b32decode(bytes(text, ENC)).decode(ENC)
 
 
 class Base16EncodeCommand(StringEncode):
 
     def encode(self, text):
-        return base64.b16encode(text.encode('raw_unicode_escape')).decode('ascii')
-
+        return base64.b16encode(bytes(text, ENC)).decode(ENC)
+        
 class Base16DecodeCommand(StringEncode):
 
     def encode(self, text):
-        return base64.b16decode(text).decode('raw_unicode_escape')
+        return base64.b16decode(bytes(text, ENC)).decode(ENC)
 
 
 class QuoPriEncodeCommand(StringEncode):
 
     def encode(self, text):
-        return quopri.encodestring(text.encode('raw_unicode_escape')).decode('ascii')
+        return quopri.encodestring(bytes(text, ENC)).decode(ENC)
 
 class QuoPriDecodeCommand(StringEncode):
 
     def encode(self, text):
-        return quopri.decodestring(text).decode('raw_unicode_escape')
+        return quopri.decodestring(bytes(text, ENC)).decode(ENC)
 
 
 class Md5EncodeCommand(StringEncode):

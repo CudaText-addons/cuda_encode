@@ -48,6 +48,9 @@ class Command:
     def base16_encode(self)       : format_proc.run( lambda text: do(text, Base16EncodeCommand) )
     def base16_decode(self)       : format_proc.run( lambda text: do(text, Base16DecodeCommand) )
 
+    def quopri_encode(self)       : format_proc.run( lambda text: do(text, QuoPriEncodeCommand) )
+    def quopri_decode(self)       : format_proc.run( lambda text: do(text, QuoPriDecodeCommand) )
+
     def escape_regex(self)        : format_proc.run( lambda text: do(text, EscapeRegexCommand) )
     def escape_like(self)         : format_proc.run( lambda text: do(text, EscapeLikeCommand) )
 

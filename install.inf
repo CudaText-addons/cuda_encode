@@ -94,11 +94,20 @@ section=commands
 caption=Encode\Base16 Decode
 method=base16_decode
 
-[item80]
+[item76]
+section=commands
+caption=Encode\Quoted-printable Encode
+method=quopri_encode
+[item77]
+section=commands
+caption=Encode\Quoted-printable Decode
+method=quopri_decode
+
+[item86]
 section=commands
 caption=Encode\Escape regex
 method=escape_regex
-[item81]
+[item87]
 section=commands
 caption=Encode\Escape LIKE
 method=escape_like

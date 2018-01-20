@@ -1,4 +1,7 @@
 
+2018.01.20
++ add: codings Base32, Base16, Quoted-printable
+
 2017.11.21
 - fix: "URL Encode" must not encode safe chars - /:;,()[] etc.
 
