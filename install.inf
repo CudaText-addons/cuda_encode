@@ -137,3 +137,20 @@ method=unicode_hex
 section=commands
 caption=Encode\Hex\Hexadecimal to Unicode
 method=hex_unicode
+
+[item120]
+section=commands
+caption=Encode\Unicode Normalize\NFC: Compose
+method=uni_norm_nfc
+[item121]
+section=commands
+caption=Encode\Unicode Normalize\NFD: Decompose
+method=uni_norm_nfd
+[item122]
+section=commands
+caption=Encode\Unicode Normalize\NFKC: Compose
+method=uni_norm_nfkc
+[item123]
+section=commands
+caption=Encode\Unicode Normalize\NFKD: Decompose
+method=uni_norm_nfkd

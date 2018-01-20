@@ -1,4 +1,7 @@
 
+2018.01.21
++ add: codings "Unicode Normalize": NFC, NFD, etc
+
 2018.01.20
 + add: codings Base32, Base16
 + add: coding Quoted-printable
