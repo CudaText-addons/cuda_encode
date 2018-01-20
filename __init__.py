@@ -51,6 +51,9 @@ class Command:
     def quopri_encode(self)       : format_proc.run( lambda text: do(text, QuoPriEncodeCommand) )
     def quopri_decode(self)       : format_proc.run( lambda text: do(text, QuoPriDecodeCommand) )
 
+    def uniescape_encode(self)    : format_proc.run( lambda text: do(text, UnicodeEscapeEncodeCommand) )
+    def uniescape_decode(self)    : format_proc.run( lambda text: do(text, UnicodeEscapeDecodeCommand) )
+
     def escape_regex(self)        : format_proc.run( lambda text: do(text, EscapeRegexCommand) )
     def escape_like(self)         : format_proc.run( lambda text: do(text, EscapeLikeCommand) )
 

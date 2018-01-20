@@ -7,6 +7,7 @@ import json
 import hashlib
 import urllib.parse
 from .escape_table import *
+from .uni_escape import *
 
 quote_plus = urllib.parse.quote_plus
 unquote_plus = urllib.parse.unquote_plus
@@ -205,6 +206,17 @@ class QuoPriDecodeCommand(StringEncode):
 
     def encode(self, text):
         return quopri.decodestring(bytes(text, ENC)).decode(ENC)
+
+
+class UnicodeEscapeEncodeCommand(StringEncode):
+
+    def encode(self, text):
+        return uni_encode(bytes(text, ENC)).decode(ENC)
+
+class UnicodeEscapeDecodeCommand(StringEncode):
+
+    def encode(self, text):
+        return uni_decode(bytes(text, ENC)).decode(ENC)
 
 
 class Md5EncodeCommand(StringEncode):

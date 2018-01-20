@@ -103,6 +103,15 @@ section=commands
 caption=Encode\Quoted-printable Decode
 method=quopri_decode
 
+[item80]
+section=commands
+caption=Encode\Unicode-escape Encode
+method=uniescape_encode
+[item81]
+section=commands
+caption=Encode\Unicode-escape Decode
+method=uniescape_decode
+
 [item86]
 section=commands
 caption=Encode\Escape regex
