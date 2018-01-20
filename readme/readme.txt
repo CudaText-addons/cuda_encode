@@ -31,6 +31,11 @@ Codings:
 - Escape regex: Escapes reg.ex. meta characters
 - Escape LIKE: Escapes SQL-LIKE meta characters
 
+- Decimal to Hex: converts decimal number to hex form (with 0x prefix)
+- Hex to Decimal: converts hex number (0x prefix is optional) to decimal form
+
+- Unicode Normalize (NFC, NFD, NFKC, NFKD): see description at https://en.wikipedia.org/wiki/Unicode_equivalence#Normal_forms 
+
 
 Author: Alexey T (CudaText)
 License: MIT
