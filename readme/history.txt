@@ -3,6 +3,7 @@
 + add: codings Base32, Base16
 + add: coding Quoted-printable
 + add: coding Unicode-escape
++ coding Base64 compatible with some online implementation
 
 2017.11.21
 - fix: "URL Encode" must not encode safe chars - /:;,()[] etc.
