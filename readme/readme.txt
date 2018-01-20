@@ -17,18 +17,18 @@ Codings:
 - URL encode: Uses urllib.quote to escape special URL characters
 - URL decode: Uses urllib.unquote to convert escaped URL characters
 
-- Base64 encode
-- Base64 decode
-- Base32 encode
-- Base32 decode
-- Base16 encode
-- Base16 decode
+- Base64 encode/decode
+- Base32 encode/decode
+- Base16 encode/decode
 
-- MD5: Uses sha package to create md5 hash
-- SHA256: Uses sha package to create sha256 hash
-- SHA512: Uses sha package to create sha512 hash
+- Quoted-printable: converts Unicode string to smth like =D0=9F=D1=80=D0=BE
+- Unicode-escape: converts Unicode string to smth like \u041f\u0440\u043e
 
-- Escape regex: Escapes reg. ex. meta characters
+- MD5: Creates MD5 hash
+- SHA256: Creates SHA256 hash
+- SHA512: Creates SHA512 hash
+
+- Escape regex: Escapes reg.ex. meta characters
 - Escape LIKE: Escapes SQL-LIKE meta characters
 
 
