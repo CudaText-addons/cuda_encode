@@ -117,15 +117,19 @@ section=commands
 caption=Encode\Misc\Hexadecimal to Decimal
 method=hex_dec
 
-;;Seems, it's the same as Unicode-escape encode/decode
-;[item92]
-;section=commands
-;caption=Encode\Hex\Unicode to Hexadecimal
-;method=unicode_hex
-;[item93]
-;section=commands
-;caption=Encode\Hex\Hexadecimal to Unicode
-;method=hex_unicode
+
+[item100]
+section=commands
+caption=Encode\ROT\ROT13
+method=rot13
+[item101]
+section=commands
+caption=Encode\ROT\ROT18
+method=rot18
+[item102]
+section=commands
+caption=Encode\ROT\ROT47
+method=rot47
 
 [item110]
 section=commands

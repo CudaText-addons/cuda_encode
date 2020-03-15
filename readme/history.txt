@@ -1,4 +1,7 @@
 
+2020.03.15
++ add: commands to encode/decode by ROT13, ROT18, ROT47
+
 2018.01.21
 + add: codings "Unicode Normalize": NFC, NFD, etc
 * removed commands "Unicode to Hex", "Hex to Unicode"-- seems it does the same as "Unicode-escape Encode/Decode"
@@ -13,4 +16,4 @@
 - fix: "URL Encode" must not encode safe chars - /:;,()[] etc.
 
 2016.06.07
-init
+initial version

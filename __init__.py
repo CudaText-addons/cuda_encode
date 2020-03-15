@@ -3,6 +3,7 @@ import os
 from unicodedata import normalize
 from cudatext import *
 from .lib_encode import *
+from .rot_proc import *
 from . import format_proc
 
 format_proc.INI = 'cuda_encode.ini'
@@ -62,6 +63,10 @@ class Command:
     def hex_dec(self)             : format_proc.run( lambda text: do(text, HexDecCommand) )
     #def unicode_hex(self)         : format_proc.run( lambda text: do(text, UnicodeHexCommand) )
     #def hex_unicode(self)         : format_proc.run( lambda text: do(text, HexUnicodeCommand) )
+
+    def rot13(self)        : format_proc.run(rot13)
+    def rot18(self)        : format_proc.run(rot18)
+    def rot47(self)        : format_proc.run(rot47)
 
     def uni_norm_nfc(self)        : format_proc.run( lambda text: normalize('NFC', text) )
     def uni_norm_nfd(self)        : format_proc.run( lambda text: normalize('NFD', text) )
