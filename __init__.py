@@ -6,8 +6,12 @@ from .lib_encode import *
 from .rot_proc import *
 from . import format_proc
 
+from cudax_lib import get_translation
+_ = get_translation(__file__)  # I18N
+
+
 format_proc.INI = 'cuda_encode.ini'
-format_proc.MSG = '[Encode] '
+format_proc.MSG = _('[Encode] ')
 
 
 def do(text, class_name):
@@ -15,7 +19,7 @@ def do(text, class_name):
     suffix = 'Command'
     if msg.endswith(suffix):
         msg = msg[:-len(suffix)]
-    format_proc.MSG = '[Encode %s] ' % msg
+    format_proc.MSG = _('[Encode %s] ') % msg
     
     c = class_name()
     text = c.encode(text)
