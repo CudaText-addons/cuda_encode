@@ -1,4 +1,7 @@
 
+2021.01.31
++ add: support translations (by Markus)
+
 2020.03.15
 + add: commands to encode/decode by ROT13, ROT18, ROT47
 
