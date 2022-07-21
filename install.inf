@@ -117,6 +117,14 @@ section=commands
 caption=Encode\Misc\Hexadecimal to Decimal
 method=hex_dec
 
+[item92]
+section=commands
+caption=Encode\Misc\QWERTY layout Russian to English
+method=qwerty_ru_en
+[item93]
+section=commands
+caption=Encode\Misc\QWERTY layout English to Russian
+method=qwerty_en_ru
 
 [item100]
 section=commands

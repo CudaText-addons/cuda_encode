@@ -1,4 +1,8 @@
 
+2022.07.21
++ add: command "Misc / QWERTY layout Russian to English"
++ add: command "Misc / QWERTY layout English to Russian"
+
 2021.01.31
 + add: support translations (by Markus)
 

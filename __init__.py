@@ -4,6 +4,7 @@ from unicodedata import normalize
 from cudatext import *
 from .lib_encode import *
 from .rot_proc import *
+from .qwerty_proc import *
 from . import format_proc
 
 from cudax_lib import get_translation
@@ -76,3 +77,6 @@ class Command:
     def uni_norm_nfd(self)        : format_proc.run( lambda text: normalize('NFD', text) )
     def uni_norm_nfkc(self)       : format_proc.run( lambda text: normalize('NFKC', text) )
     def uni_norm_nfkd(self)       : format_proc.run( lambda text: normalize('NFKD', text) )
+
+    def qwerty_en_ru(self): format_proc.run(qwerty_en_ru)
+    def qwerty_ru_en(self): format_proc.run(qwerty_ru_en)
