@@ -27,7 +27,7 @@ Codings:
 - SHA256: creates SHA256 hash
 - SHA512: creates SHA512 hash
 
-- Escape regex: escapes regular-expressions meta characters
+- Escape regex: escapes regular-expressions meta characters, e.g. $ to \$
 - Escape %_: escapes SQL-LIKE meta characters
 
 - Decimal to hexadecimal: converts decimal number to hex form (with 0x prefix)
