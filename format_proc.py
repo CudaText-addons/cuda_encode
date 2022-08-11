@@ -83,6 +83,9 @@ def run(do_format):
         ed.delete(x0, y0, x1, y1)
         ed.insert(x0, y0, text)
     else:
+        msg_status(MSG + _('Cannot work without selection'))
+
+        '''
         text = ed.get_text_all()
         text = do_format(text)
         if not text:
@@ -92,3 +95,4 @@ def run(do_format):
         msg_status(MSG + _("Formatting entire text"))
         ed.set_caret(0, 0)
         ed.set_text_all(text)
+        '''
