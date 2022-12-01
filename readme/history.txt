@@ -1,3 +1,5 @@
+2022.12.01
++ add: command "Insert Base64-encoded file"
 
 2022.08.11
 * change: disabled work of most of commands for the case 'no selection in text', because changing of entire text (w/o selection) doesn't support Undo

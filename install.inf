@@ -81,6 +81,11 @@ section=commands
 caption=Encode\Base\Base16 Decode
 method=base16_decode
 
+[item75b]
+section=commands
+caption=Encode\Base\Insert Base64-encoded file...
+method=base64_file
+
 [item76]
 section=commands
 caption=Encode\Quoted-printable Encode

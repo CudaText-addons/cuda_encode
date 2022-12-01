@@ -27,6 +27,16 @@ def do(text, class_name):
     del c
     return text
 
+def insert_base64_file():
+    fn = dlg_file(True, '', '', 'All files|*', '')
+    if not fn: return
+    import base64
+    s = open(fn, 'rb').read()
+    s = base64.b64encode(s).decode()
+    x, y, x1, y1 = ed.get_carets()[0]
+    x, y = ed.insert(x, y, s+'\n')
+    ed.set_caret(x, y)
+
 
 class Command:
 
@@ -54,6 +64,8 @@ class Command:
     def base32_decode(self)       : format_proc.run( lambda text: do(text, Base32DecodeCommand) )
     def base16_encode(self)       : format_proc.run( lambda text: do(text, Base16EncodeCommand) )
     def base16_decode(self)       : format_proc.run( lambda text: do(text, Base16DecodeCommand) )
+
+    def base64_file(self)         : insert_base64_file()
 
     def quopri_encode(self)       : format_proc.run( lambda text: do(text, QuoPriEncodeCommand) )
     def quopri_decode(self)       : format_proc.run( lambda text: do(text, QuoPriDecodeCommand) )
