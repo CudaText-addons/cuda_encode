@@ -64,6 +64,14 @@ method=base64_encode
 section=commands
 caption=Encode\Base\Base64 Decode
 method=base64_decode
+[item70a]
+section=commands
+caption=Encode\Base\Base64 Encode by line
+method=base64_encode_line
+[item71a]
+section=commands
+caption=Encode\Base\Base64 Decode by line
+method=base64_decode_line
 [item72]
 section=commands
 caption=Encode\Base\Base32 Encode

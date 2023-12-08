@@ -37,6 +37,37 @@ def insert_base64_file():
     x, y = ed.insert(x, y, s+'\n')
     ed.set_caret(x, y)
 
+def base64_by_line(do_encode):
+    carets = ed.get_carets()
+    for (x, y, x1, y1) in carets:
+        if y1<0:
+            return msg_status('Caret(s) must have selection(s)')
+    ncount = 0
+    nerrors = 0
+    for (x, y, x1, y1) in reversed(carets):
+        if (y, x)>(y1, x1):
+            x, y, x1, y1 = x1, y1, x, y
+        if x1==0 and y1>0:
+            y1 -= 1
+        for nline in reversed(range(y, y1+1)):
+            s = ed.get_text_line(nline)
+            if s.strip()=='':
+                continue
+            if do_encode:
+                s = base64.b64encode(s.encode()).decode()
+            else:
+                s = base64.b64decode(s.encode()).decode()
+            if not s:
+                nerrors += 1
+                continue
+            ed.set_text_line(nline, s)
+            ncount += 1
+
+    msg = 'Changed %d line(s)'%ncount
+    if nerrors>0:
+        msg += ', got %d error(s)'%nerrors
+    msg_status(msg)
+
 
 class Command:
 
@@ -65,6 +96,8 @@ class Command:
     def base16_encode(self)       : format_proc.run( lambda text: do(text, Base16EncodeCommand) )
     def base16_decode(self)       : format_proc.run( lambda text: do(text, Base16DecodeCommand) )
 
+    def base64_encode_line(self)  : base64_by_line(True)
+    def base64_decode_line(self)  : base64_by_line(False)
     def base64_file(self)         : insert_base64_file()
 
     def quopri_encode(self)       : format_proc.run( lambda text: do(text, QuoPriEncodeCommand) )
