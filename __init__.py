@@ -49,8 +49,8 @@ def change_by_line(encoder):
     for (x, y, x1, y1) in carets:
         if y1<0:
             return msg_status('Caret(s) must have selection(s)')
-    ncount = 0
-    nerrors = 0
+    changed = 0
+    errors = 0
     for (x, y, x1, y1) in reversed(carets):
         if (y, x)>(y1, x1):
             x, y, x1, y1 = x1, y1, x, y
@@ -64,16 +64,15 @@ def change_by_line(encoder):
                 s = encoder(s)
             except:
                 s = ''
-                nerrors += 1
             if not s:
-                nerrors += 1
+                errors += 1
                 continue
             ed.set_text_line(nline, s)
-            ncount += 1
+            changed += 1
 
-    msg = 'Changed %d line(s)'%ncount
-    if nerrors>0:
-        msg += ', got %d error(s)'%nerrors
+    msg = 'Changed %d line(s)'%changed
+    if errors>0:
+        msg += ', '+'got %d error(s)'%errors
     msg_status(msg)
 
 
