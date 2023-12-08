@@ -80,6 +80,14 @@ method=base32_encode
 section=commands
 caption=Encode\Base\Base32 Decode
 method=base32_decode
+[item72a]
+section=commands
+caption=Encode\Base\Base32 Encode by line
+method=base32_encode_line
+[item73a]
+section=commands
+caption=Encode\Base\Base32 Decode by line
+method=base32_decode_line
 [item74]
 section=commands
 caption=Encode\Base\Base16 Encode

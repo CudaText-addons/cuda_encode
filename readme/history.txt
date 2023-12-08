@@ -1,5 +1,6 @@
 2023.12.08
 + add: 2 commands "Base64 Encode/Decode by line"
++ add: 2 commands "Base32 Encode/Decode by line"
 
 2022.12.01
 + add: command "Insert Base64-encoded file"

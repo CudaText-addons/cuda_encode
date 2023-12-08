@@ -40,9 +40,13 @@ def insert_base64_file():
 
 def encoder_base64(s):
     return base64.b64encode(s.encode()).decode()
-
 def decoder_base64(s):
     return base64.b64decode(s.encode()).decode()
+
+def encoder_base32(s):
+    return base64.b32encode(s.encode()).decode()
+def decoder_base32(s):
+    return base64.b32decode(s.encode()).decode()
 
 def change_by_line(encoder):
     carets = ed.get_carets()
@@ -105,6 +109,8 @@ class Command:
 
     def base64_encode_line(self)  : change_by_line(encoder_base64)
     def base64_decode_line(self)  : change_by_line(decoder_base64)
+    def base32_encode_line(self)  : change_by_line(encoder_base32)
+    def base32_decode_line(self)  : change_by_line(decoder_base32)
 
     def base64_file(self)         : insert_base64_file()
 
