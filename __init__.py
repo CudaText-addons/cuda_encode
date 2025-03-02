@@ -21,14 +21,14 @@ def do(text, class_name):
     if msg.endswith(suffix):
         msg = msg[:-len(suffix)]
     format_proc.MSG = _('[Encode %s] ') % msg
-    
+
     c = class_name()
     text = c.encode(text)
     del c
     return text
 
 def insert_base64_file():
-    fn = dlg_file(True, '', '', 'All files|*', '')
+    fn = dlg_file(True, '', '', _('All files')+'|*', '')
     if not fn: return
     import base64
     s = open(fn, 'rb').read()
@@ -52,7 +52,7 @@ def change_by_line(encoder):
     carets = ed.get_carets()
     for (x, y, x1, y1) in carets:
         if y1<0:
-            return msg_status('Caret(s) must have selection(s)')
+            return msg_status(_('Caret(s) must have selection(s)'))
     changed = 0
     errors = 0
     for (x, y, x1, y1) in reversed(carets):
@@ -74,9 +74,9 @@ def change_by_line(encoder):
             ed.set_text_line(nline, s)
             changed += 1
 
-    msg = 'Changed %d line(s)'%changed
+    msg = _('Changed %d line(s)') %changed
     if errors>0:
-        msg += ', '+'got %d error(s)'%errors
+        msg += ', '+_('got %d error(s)') %errors
     msg_status(msg)
 
 
