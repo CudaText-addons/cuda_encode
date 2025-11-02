@@ -9,7 +9,7 @@ import urllib.parse
 from .escape_table import *
 
 quote_plus = urllib.parse.quote_plus
-unquote_plus = urllib.parse.unquote_plus
+unquote_plus = urllib.parse.unquote # unquote_plus is not ok, user requested to always keep '+' char
 ENC = 'utf8' 
 
 try:
