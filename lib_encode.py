@@ -145,6 +145,14 @@ class JsonUnescapeCommand(StringEncode):
         return json.loads(text)
 
 
+'''
+URL Encode: as in Notepad++, basically encodes all non-reserved chars (think of this regex: [a-zA-Z0-9._-] ie. alphanumerics, dot, underscore and dash) with a few exceptions $+!*'(),
+
+URL Encode Unrestricted: encodes even the exceptions above (like +), while still preserving alphanumerics, dot, underscore and dash.
+
+URL Encode Everything: as in Notepad++, encodes absolutely everything including letters
+'''
+
 class UrlEncodeCommand(StringEncode):
 
     def encode(self, text):
