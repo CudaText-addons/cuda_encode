@@ -8,8 +8,6 @@ import hashlib
 import urllib.parse
 from .escape_table import *
 
-quote_plus = urllib.parse.quote_plus
-unquote_plus = urllib.parse.unquote # unquote_plus is not ok, user requested to always keep '+' char
 ENC = 'utf8' 
 
 try:
@@ -149,17 +147,28 @@ class JsonUnescapeCommand(StringEncode):
 
 class UrlEncodeCommand(StringEncode):
 
-    def encode(self, text, old_school=True):
-        quoted = quote_plus(text, safe='/():;.,[]@&-'+'\n\r')
-        if old_school:
-            return quoted.replace("+", "%20")
+    def encode(self, text):
+        quoted = urllib.parse.quote(text, safe='$+!*\'(),')
+        return quoted
+
+class UrlEncode2Command(StringEncode):
+
+    def encode(self, text):
+        quoted = urllib.parse.quote(text, safe='')
+        return quoted
+
+class UrlEncode3Command(StringEncode):
+
+    def encode(self, text):
+        quoted = "".join(f"%{byte:02X}" for byte in text.encode("utf-8"))
         return quoted
 
 
 class UrlDecodeCommand(StringEncode):
 
     def encode(self, text):
-        return unquote_plus(text)
+        # unquote_plus is not ok, user requested to always keep '+' char
+        return urllib.parse.unquote(text)
 
 
 class Base64EncodeCommand(StringEncode):

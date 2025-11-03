@@ -94,6 +94,8 @@ class Command:
     def json_escape(self)         : format_proc.run( lambda text: do(text, JsonEscapeCommand) )
     def json_unescape(self)       : format_proc.run( lambda text: do(text, JsonUnescapeCommand) )
     def url_encode(self)          : format_proc.run( lambda text: do(text, UrlEncodeCommand) )
+    def url_encode_2(self)        : format_proc.run( lambda text: do(text, UrlEncode2Command) )
+    def url_encode_3(self)        : format_proc.run( lambda text: do(text, UrlEncode3Command) )
     def url_decode(self)          : format_proc.run( lambda text: do(text, UrlDecodeCommand) )
 
     def md5_encode(self)          : format_proc.run( lambda text: do(text, Md5EncodeCommand) )

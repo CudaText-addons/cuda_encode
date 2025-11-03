@@ -47,14 +47,30 @@ section=commands
 caption=Encode\JSON Unescape
 method=json_unescape
 
+[item50]
+section=commands
+caption=Encode\-
+method=_
 [item51]
 section=commands
 caption=Encode\URL Encode
 method=url_encode
 [item52]
 section=commands
+caption=Encode\URL Encode Unrestricted (encode '+&&')
+method=url_encode_2
+[item53]
+section=commands
+caption=Encode\URL Encode Everything (encode letters)
+method=url_encode_3
+[item55]
+section=commands
 caption=Encode\URL Decode
 method=url_decode
+[item56]
+section=commands
+caption=Encode\-
+method=_
 
 [item70]
 section=commands
