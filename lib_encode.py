@@ -145,28 +145,26 @@ class JsonUnescapeCommand(StringEncode):
         return json.loads(text)
 
 
-'''
-URL Encode: as in Notepad++, basically encodes all non-reserved chars (think of this regex: [a-zA-Z0-9._-] ie. alphanumerics, dot, underscore and dash) with a few exceptions $+!*'(),
-
-URL Encode Unrestricted: encodes even the exceptions above (like +), while still preserving alphanumerics, dot, underscore and dash.
-
-URL Encode Everything: as in Notepad++, encodes absolutely everything including letters
-'''
-
 class UrlEncodeCommand(StringEncode):
-
+    '''
+    URL Encode: as in Notepad++, basically encodes all non-reserved chars (think of this regex: [a-zA-Z0-9._-] ie. alphanumerics, dot, underscore and dash) with a few exceptions $+!*'(),
+    '''
     def encode(self, text):
         quoted = urllib.parse.quote(text, safe='$+!*\'(),')
         return quoted
 
 class UrlEncode2Command(StringEncode):
-
+    '''
+    URL Encode Unrestricted: encodes even the exceptions above (like +), while still preserving alphanumerics, dot, underscore and dash.
+    '''
     def encode(self, text):
         quoted = urllib.parse.quote(text, safe='')
         return quoted
 
 class UrlEncode3Command(StringEncode):
-
+    '''
+    URL Encode Everything: as in Notepad++, encodes absolutely everything including letters
+    '''
     def encode(self, text):
         quoted = "".join(f"%{byte:02X}" for byte in text.encode("utf-8"))
         return quoted
