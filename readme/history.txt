@@ -1,5 +1,6 @@
 2025.11.02
 + fix: 'URL Decode' did change '+' to space, dont do it now
++ add: 'URL Encode' two commands changed to 3 commands: 'URL Encode', 'URL Encode Unrestricted', 'URL Encode Everything', similar to Notepad++ MIME-Tools plugin (thanks @pintassilgo)
 
 2023.12.08
 + add: 2 commands "Base64 Encode/Decode by line"
