@@ -39,14 +39,27 @@ class HtmlEntitizeCommand(StringEncode):
 class HtmlDeentitizeCommand(StringEncode):
 
     def encode(self, text):
-        for k in html_escape_table:
-            v = html_escape_table[k]
+        # Reverse lookup for named entities
+        for k, v in html_escape_table.items():
             text = text.replace(v, k)
-        while re.search('&#[xX][a-fA-F0-9]+;', text):
-            match = re.search('&#[xX]([a-fA-F0-9]+);', text)
-            text = text.replace(
-                match.group(0), unichr(int('0x' + match.group(1), 16)))
+
+        # Decode hexadecimal entities: &#x27; or &#X27;
+        text = re.sub(
+            r'&#[xX]([0-9A-Fa-f]+);',
+            lambda m: chr(int(m.group(1), 16)),
+            text
+        )
+
+        # Decode decimal entities: &#39;
+        text = re.sub(
+            r'&#([0-9]+);',
+            lambda m: chr(int(m.group(1))),
+            text
+        )
+
+        # Decode &amp; last, to avoid double decoding
         text = text.replace('&amp;', '&')
+
         return text
 
 
