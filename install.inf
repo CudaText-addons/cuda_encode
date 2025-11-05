@@ -31,11 +31,11 @@ caption=Encode\XML Deentitize
 method=xml_deentitize
 [item31]
 section=commands
-caption=Encode\Safe HTML Entitize
+caption=Encode\Safe HTML Entitize (don't encode "'<>&&)
 method=safe_html_entitize
 [item32]
 section=commands
-caption=Encode\Safe HTML Deentitize
+caption=Encode\Safe HTML Deentitize (don't decode "'<>&&)
 method=safe_html_deentitize
 
 [item41]
