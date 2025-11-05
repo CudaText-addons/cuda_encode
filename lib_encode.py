@@ -10,11 +10,25 @@ from .escape_table import *
 
 ENC = 'utf8' 
 
-try:
-    unichr(32)
-except NameError:
-    def unichr(val):
-        return chr(val)
+
+def decode_num_entities(text, dec, hexa):
+    if dec:
+        # Decode decimal entities: &#39;
+        text = re.sub(
+            r'&#([0-9]+);',
+            lambda m: chr(int(m.group(1))),
+            text
+        )
+
+    if hexa:
+        # Decode hexadecimal entities: &#x27; or &#X27;
+        text = re.sub(
+            r'&#[xX]([0-9A-Fa-f]+);',
+            lambda m: chr(int(m.group(1), 16)),
+            text
+        )
+
+    return text
 
 
 class StringEncode():
@@ -43,19 +57,7 @@ class HtmlDeentitizeCommand(StringEncode):
         for k, v in html_escape_table.items():
             text = text.replace(v, k)
 
-        # Decode hexadecimal entities: &#x27; or &#X27;
-        text = re.sub(
-            r'&#[xX]([0-9A-Fa-f]+);',
-            lambda m: chr(int(m.group(1), 16)),
-            text
-        )
-
-        # Decode decimal entities: &#39;
-        text = re.sub(
-            r'&#([0-9]+);',
-            lambda m: chr(int(m.group(1))),
-            text
-        )
+        text = decode_num_entities(text, True, True)
 
         # Decode &amp; last, to avoid double decoding
         text = text.replace('&amp;', '&')
@@ -81,7 +83,7 @@ class CssUnescapeCommand(StringEncode):
         while re.search(r'\\[a-fA-F0-9]+', text):
             match = re.search(r'\\([a-fA-F0-9]+)', text)
             text = text.replace(
-                match.group(0), unichr(int('0x' + match.group(1), 16)))
+                match.group(0), chr(int('0x' + match.group(1), 16)))
         return text
 
 
@@ -112,10 +114,9 @@ class SafeHtmlDeentitizeCommand(StringEncode):
                 continue
             v = html_escape_table[k]
             text = text.replace(v, k)
-        while re.search('&#[xX][a-fA-F0-9]+;', text):
-            match = re.search('&#[xX]([a-fA-F0-9]+);', text)
-            text = text.replace(
-                match.group(0), unichr(int('0x' + match.group(1), 16)))
+
+        text = decode_num_entities(text, False, True) # dec=False since original Sublime plugin had not dec-decoding, only hex
+
         text = text.replace('&amp;', '&')
         return text
 
@@ -142,6 +143,9 @@ class XmlDeentitizeCommand(StringEncode):
         for k in xml_escape_table:
             v = xml_escape_table[k]
             text = text.replace(v, k)
+
+        text = decode_num_entities(text, True, True)
+
         text = text.replace('&amp;', '&')
         return text
 
