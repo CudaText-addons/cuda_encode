@@ -1,7 +1,5 @@
 Plugin for CudaText.
 Allows to convert text (selected block, or entire text if nothing selected) using many codings (transformations).
-Ported from StringEncode: https://github.com/colinta/SublimeStringEncode
-Later more codings were added.
 
 Codings:
 
@@ -43,6 +41,12 @@ Codings:
 - Unicode normalize (NFC, NFD, NFKC, NFKD): see description at
   https://en.wikipedia.org/wiki/Unicode_equivalence#Normal_forms
 
+
+About
+-----
+
+Code was ported from Sublime Text plugin "StringEncode": https://github.com/colinta/SublimeStringEncode
+Later more encodings were added by Alexey T., legacy Sublime-plugin-code was improved/changed.
 
 Author: Alexey Torgashin (CudaText)
 License: MIT
