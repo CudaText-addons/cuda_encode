@@ -7,36 +7,37 @@ homepage=https://github.com/cudatext-addons/cuda_encode
 
 [item1]
 section=commands
-caption=Encode\HTML Entitize
+caption=Encode\HTML Entity\HTML Entitize
 method=html_entitize
 [item2]
 section=commands
-caption=Encode\HTML Deentitize
+caption=Encode\HTML Entity\HTML Deentitize
 method=html_deentitize
 [item11]
 section=commands
+caption=Encode\HTML Entity\XML Entitize
+method=xml_entitize
+[item12]
+section=commands
+caption=Encode\HTML Entity\XML Deentitize
+method=xml_deentitize
+[item21]
+section=commands
+caption=Encode\HTML Entity\Safe HTML Entitize (don't encode "'<>&&)
+method=safe_html_entitize
+[item22]
+section=commands
+caption=Encode\HTML Entity\Safe HTML Deentitize (don't decode "'<>&&)
+method=safe_html_deentitize
+
+[item31]
+section=commands
 caption=Encode\CSS Escape
 method=css_escape
-[item12]
+[item32]
 section=commands
 caption=Encode\CSS Unescape
 method=css_unescape
-[item21]
-section=commands
-caption=Encode\XML Entitize
-method=xml_entitize
-[item22]
-section=commands
-caption=Encode\XML Deentitize
-method=xml_deentitize
-[item31]
-section=commands
-caption=Encode\Safe HTML Entitize (don't encode "'<>&&)
-method=safe_html_entitize
-[item32]
-section=commands
-caption=Encode\Safe HTML Deentitize (don't decode "'<>&&)
-method=safe_html_deentitize
 
 [item41]
 section=commands
@@ -47,30 +48,22 @@ section=commands
 caption=Encode\JSON Unescape
 method=json_unescape
 
-[item50]
-section=commands
-caption=Encode\-
-method=_
 [item51]
 section=commands
-caption=Encode\URL Encode
+caption=Encode\URLs\URL Encode
 method=url_encode
 [item52]
 section=commands
-caption=Encode\URL Encode Unrestricted (encode '+&&')
+caption=Encode\URLs\URL Encode Unrestricted (encode '+&&')
 method=url_encode_2
 [item53]
 section=commands
-caption=Encode\URL Encode Everything (encode letters)
+caption=Encode\URLs\URL Encode Everything (encode letters)
 method=url_encode_3
 [item55]
 section=commands
-caption=Encode\URL Decode
+caption=Encode\URLs\URL Decode
 method=url_decode
-[item56]
-section=commands
-caption=Encode\-
-method=_
 
 [item70]
 section=commands
