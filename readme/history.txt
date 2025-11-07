@@ -1,8 +1,9 @@
 2025.11.06
-+ add: 'HTML Deentitize' now handles dec-codes without leading zero (idea by @pintassilgo, done by Alexey T.)
+(ideas by @pintassilgo, done by Alexey T.)
++ add: 'HTML Deentitize' now handles dec-codes without leading zero
 - fix: 'URL Decode' did change '+' to space, don't do it now
-+ add: 'URL Encode' two commands changed to 3 commands: 'URL Encode', 'URL Encode Unrestricted', 'URL Encode Everything', similar to Notepad++ plugin (idea by @pintassilgo)
-* change: current 6 HTML-Entity-related commands were tweaked, to be more like in Notepad++ plugin (idea by @pintassilgo)
++ add: 'URL Encode' two commands changed to 3 commands: 'URL Encode', 'URL Encode Unrestricted', 'URL Encode Everything', similar to Notepad++ plugin
+* change: current 6 HTML-Entity-related commands were tweaked, to be more like in Notepad++ plugin
 * change: rearrange menu items in "Plugins / Encode"
 
 2023.12.08
