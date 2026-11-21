@@ -1,3 +1,6 @@
+2026.11.21
+- fix: avoid deprecated API: get_filename
+
 2025.11.06
 (ideas by @pintassilgo, done by Alexey T.)
 + add: 'HTML Deentitize' now handles dec-codes without leading zero

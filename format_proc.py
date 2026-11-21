@@ -18,7 +18,7 @@ def ini_global():
     return ini    
 
 def ini_local():
-    fn = ed.get_filename()
+    fn = ed.get_prop(PROP_FN, '')
     if fn:
         return os.path.join(os.path.dirname(fn), INI)
     else:
@@ -40,7 +40,7 @@ def config_global():
         msg_box(_('Global config file "%s" not found') % INI, MB_OK)
 
 def config_local():
-    if not ed.get_filename():
+    if not ed.get_prop(PROP_FN, ''):
         msg_box(_('Cannot open local config file for untitled tab'), MB_OK)
         return
     ini = ini_local()
